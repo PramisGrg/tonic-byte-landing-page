@@ -36,8 +36,8 @@ const Testimonials = () => {
       <div className="lg:py-20 md:py-10 py-8 space-y-10">
         <div className="text-center space-y-4 font-bold">
           <h1 className="text-4xl">
-            Hear from our Happy
-            <span className="text-primary">customers !!</span>
+            Hear from our happy
+            <span className="text-primary"> Customers</span> !!
           </h1>
           <p className="text-gray-400 font-normal">
             Explore with our happy clients what Tonic Byte provide to your dream

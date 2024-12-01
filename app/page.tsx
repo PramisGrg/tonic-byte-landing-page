@@ -3,6 +3,7 @@ import { BackgroundLinesDemo } from "@/components/hero-section";
 import { Bento } from "@/components/what-we-offer";
 import Footer from "@/components/footer";
 import Testimonials from "@/components/testimonials";
+import WhyChooseUs from "@/components/why-choose-us";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <BackgroundLinesDemo />
       <Bento />
       <Testimonials />
+      <WhyChooseUs />
       <Footer />
     </div>
   );
