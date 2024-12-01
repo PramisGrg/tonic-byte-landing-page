@@ -11,19 +11,19 @@ const testimonials = [
       "Tonic Byte with a sleek, user-friendly website that exceeded our expectations. Their team was professional, responsive, and clearly passionate about delivering top-notch solutions. We couldn't be happier with the results!",
   },
   {
-    person: "Nisha Sakya",
+    person: "Pramis Grg",
     tittle: "Founder @ Himalayan Trail",
     description:
       "Tonic Byte transformed our online presence with a sleek, user-friendly website Their team was professional, responsive, and clearly passionate about delivering top-notch solutions. We couldn't be happier with the results!",
   },
   {
-    person: "Nisha Sakya",
+    person: "Dipak",
     tittle: "Founder @ Himalayan Trail",
     description:
       "Tonic Byte transformed  our online presence with a sleek, user-friendly websiteheir team was professional, responsive, and clearly passionate about delivering top-notch solutions. We couldn't be happier with the results!",
   },
   {
-    person: "Nisha Sakya",
+    person: "Dinesh",
     tittle: "Founder @ Himalayan Trail",
     description:
       "Tonic Byte transformed our online presence with a sleek, user-friendly website that exceeded our expectations. Their tessional, responsive, and clearly passionate about delivering top-notch solutions. We couldn't be happier with the results!",
@@ -45,13 +45,16 @@ const Testimonials = () => {
         </div>
         <div className="storybook-fix relative flex h-full max-h-96 min-h-72 w-full min-w-72 items-center justify-center overflow-hidden bg-background">
           <Marquee className="" pauseOnHover applyMask={false}>
-            {testimonials.map((one) => (
-              <div className="bg-secondary text-white p-4 w-80 space-y-4 rounded-md h-full">
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.person}
+                className="bg-secondary text-white p-4 w-80 space-y-4 rounded-md h-full"
+              >
                 <Quote className="text-primary" />
-                <p className="">{one.description}</p>
+                <p className="">{testimonial.description}</p>
                 <div>
-                  <p className="font-bold text-primary">{one.person}</p>
-                  <p className="text-sm text-gray-400">{one.tittle}</p>
+                  <p className="font-bold text-primary">{testimonial.person}</p>
+                  <p className="text-sm text-gray-400">{testimonial.tittle}</p>
                 </div>
               </div>
             ))}

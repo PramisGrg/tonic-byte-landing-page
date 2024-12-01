@@ -16,7 +16,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+// import Image from "next/image";
 
 const components: {
   title: string;
