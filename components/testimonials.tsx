@@ -1,48 +1,65 @@
-"use client";
-
 import React from "react";
-import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
-
-export function InfiniteMovingCardsDemo() {
-  return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="right"
-        speed="slow"
-      />
-    </div>
-  );
-}
+import Marquee from "./animata/container/marquee";
+import MaxwidthContainer from "@/app/layout/maxwidth-container";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+    person: "Nisha Sakya",
+    tittle: "Founder @ Himalayan Trail",
+    description:
+      "Tonic Byte with a sleek, user-friendly website that exceeded our expectations. Their team was professional, responsive, and clearly passionate about delivering top-notch solutions. We couldn't be happier with the results!",
   },
   {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
+    person: "Nisha Sakya",
+    tittle: "Founder @ Himalayan Trail",
+    description:
+      "Tonic Byte transformed our online presence with a sleek, user-friendly website Their team was professional, responsive, and clearly passionate about delivering top-notch solutions. We couldn't be happier with the results!",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+    person: "Nisha Sakya",
+    tittle: "Founder @ Himalayan Trail",
+    description:
+      "Tonic Byte transformed  our online presence with a sleek, user-friendly websiteheir team was professional, responsive, and clearly passionate about delivering top-notch solutions. We couldn't be happier with the results!",
   },
   {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
-  },
-  {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+    person: "Nisha Sakya",
+    tittle: "Founder @ Himalayan Trail",
+    description:
+      "Tonic Byte transformed our online presence with a sleek, user-friendly website that exceeded our expectations. Their tessional, responsive, and clearly passionate about delivering top-notch solutions. We couldn't be happier with the results!",
   },
 ];
+
+const Testimonials = () => {
+  return (
+    <MaxwidthContainer>
+      <div className="lg:py-20 md:py-10 py-8 space-y-10">
+        <div className="text-center space-y-4 font-bold">
+          <h1 className="text-4xl">
+            Hear from our Happy
+            <span className="text-primary">customers !!</span>
+          </h1>
+          <p className="text-gray-400 font-normal">
+            Explore with our happy clients what Tonic Byte provide to your dream
+          </p>
+        </div>
+        <div className="storybook-fix relative flex h-full max-h-96 min-h-72 w-full min-w-72 items-center justify-center overflow-hidden bg-background">
+          <Marquee className="" pauseOnHover applyMask={false}>
+            {testimonials.map((one) => (
+              <div className="bg-secondary text-white p-4 w-80 space-y-4 rounded-md h-full">
+                <Quote className="text-primary" />
+                <p className="">{one.description}</p>
+                <div>
+                  <p className="font-bold text-primary">{one.person}</p>
+                  <p className="text-sm text-gray-400">{one.tittle}</p>
+                </div>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </div>
+    </MaxwidthContainer>
+  );
+};
+
+export default Testimonials;
