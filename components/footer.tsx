@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="space-y-2 md:block flex justify-between">
             <div>
               <h1 className="text-3xl font-bold">Tonic Byte</h1>
-              <p>Zero Km, Pokhara</p>
+              <p>Zero Km-17, Pokhara</p>
             </div>
             <span className="flex gap-4">
               <IoCall className="w-8 h-8 text-green-600" />
