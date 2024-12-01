@@ -3,7 +3,7 @@ import MaxwidthContainer from "@/app/layout/maxwidth-container";
 import taskDoneAnimation from "@/public/animation/animation.json";
 import Lottie from "lottie-react";
 import { GiRoad } from "react-icons/gi";
-import { ShieldCheck, ListCheck, UserRound, Hammer, Check } from "lucide-react";
+import { ShieldCheck, UserRound, Check } from "lucide-react";
 import { easeInOut, motion } from "framer-motion";
 
 const whyChooseUs = [
