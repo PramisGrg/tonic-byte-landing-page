@@ -60,7 +60,7 @@ const WhyChooseUs = () => {
             We are on a mission to empower everyone including individuals, small
             businesses, large-scale businesses and enterprise industry to turn
             great ideas into reality by planning, execution and quality
-            assurance in Nepal by providing following solutions
+            assurance in Nepal.
           </p>
         </div>
         <div className="grid md:grid-cols-2 grid-cols-1">
