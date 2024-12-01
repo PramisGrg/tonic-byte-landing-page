@@ -4,7 +4,7 @@ import taskDoneAnimation from "@/public/animation/animation.json";
 import Lottie from "lottie-react";
 import { GiRoad } from "react-icons/gi";
 import { ShieldCheck, ListCheck, UserRound, Hammer, Check } from "lucide-react";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 
 const whyChooseUs = [
   {
@@ -43,6 +43,7 @@ const listAnimationVariants = {
     y: 0,
     transition: {
       delay: 0.4 * index,
+      easeInOut,
     },
   }),
 };

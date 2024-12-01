@@ -1,5 +1,22 @@
+"use client";
 import MaxwidthContainer from "@/app/layout/maxwidth-container";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+
+const listAnimation = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.4 * i,
+      ease: "easeInOut",
+    },
+  }),
+};
 
 const whatWeOffer = [
   {
@@ -59,7 +76,11 @@ export const Bento = () => {
         </div>
         <div className="grid md:grid-cols-4 gap-8">
           {whatWeOffer.map((item, i) => (
-            <div
+            <motion.div
+              variants={listAnimation}
+              initial="hidden"
+              whileInView="visible"
+              custom={i}
               key={i}
               className={cn(
                 "p-1 rounded-lg h-32",
@@ -69,7 +90,7 @@ export const Bento = () => {
               )}
             >
               <Cell tittle={item.tittle} description={item.description} />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
