@@ -47,10 +47,10 @@ export const Cell = ({
 export const Bento = () => {
   return (
     <MaxwidthContainer>
-      <div className="lg:space-y-20 md:space-y-12 space-y-6">
+      <div className="lg:space-y-20 md:space-y-12 space-y-6 py-14">
         <div className="text-center space-y-4">
-          <h1 className="text-primary lg:text-4xl md:text-2xl text-xl">
-            What We Offer ?
+          <h1 className=" font-bold lg:text-4xl md:text-2xl text-xl">
+            What We <span className="text-primary">Offer</span> ?
           </h1>
           <p className="text-gray-400 ">
             At Tonic Byte, we provide innovative technology solutions tailored
