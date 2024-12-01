@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import tonicByte from "@/public/tonicbyte.jpeg";
 import { cn } from "@/lib/utils";
+import { CgWebsite } from "react-icons/cg";
 // import { Icons } from "@/components/icons"
 import {
   NavigationMenu,
@@ -17,51 +18,63 @@ import {
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-const components: { title: string; href: string; description: string }[] = [
+const components: {
+  title: string;
+  href: string;
+  description: string;
+  icon: JSX.Element;
+}[] = [
   {
-    title: "Alert Dialog",
+    title: "Web Development",
     href: "/docs/primitives/alert-dialog",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Creating responsive, user-friendly websites and web applications tailored to your business needs.",
+    icon: <CgWebsite />,
   },
   {
-    title: "Hover Card",
+    title: "Mobile App Development",
     href: "/docs/primitives/hover-card",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Building scalable and feature-rich mobile applications for Android and iOS to engage users on the go.",
+    icon: <CgWebsite />,
   },
   {
-    title: "Progress",
+    title: "DevOps and Cloud",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Streamlining development and operations with cloud solutions and automation for efficient software delivery.",
+    icon: <CgWebsite />,
   },
   {
-    title: "Scroll-area",
+    title: "UI/UX Design",
     href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    description:
+      "Designing intuitive and visually appealing interfaces that enhance user experiences across digital platforms.",
+    icon: <CgWebsite />,
   },
   {
-    title: "Tabs",
+    title: "Database Management",
     href: "/docs/primitives/tabs",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Organizing, optimizing, and securing data to ensure seamless access and robust performance.",
+    icon: <CgWebsite />,
   },
   {
-    title: "Tooltip",
+    title: "Digital Marketing",
     href: "/docs/primitives/tooltip",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Driving online growth through strategic campaigns, SEO, social media, and targeted advertising.",
+    icon: <CgWebsite />,
   },
 ];
 
 export function NavigationMenuDemo() {
   return (
-    <div className="flex justify-between p-4 px-20">
+    <div className="flex justify-between py-4 mx-auto lg:px-24 md:px-16 px-6">
       <div className="flex gap-4 items-center">
         <Image
-          height={50}
-          width={50}
+          height={40}
+          width={40}
           className="rounded-full"
           src={tonicByte}
           alt="Company Logo"
@@ -71,7 +84,9 @@ export function NavigationMenuDemo() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="text-base">
+              Getting started
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3">
@@ -105,17 +120,21 @@ export function NavigationMenuDemo() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="text-base">
+              Services
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              <ul className="grid w-[500px] gap-3 p-4 md:w-[600px] md:grid-cols-2 lg:w-[700px] ">
                 {components.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                  >
-                    {component.description}
-                  </ListItem>
+                  <div className="" key={component.title}>
+                    <ListItem
+                      key={component.title}
+                      title={component.title}
+                      href={component.href}
+                    >
+                      {component.description}
+                    </ListItem>
+                  </div>
                 ))}
               </ul>
             </NavigationMenuContent>
@@ -123,13 +142,20 @@ export function NavigationMenuDemo() {
           <NavigationMenuItem>
             <Link href="/docs" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Documentation
+                <p className="text-base">Documentation</p>
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/docs" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                About Us
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <Button className="text-white p-2 rounded-md text-center">
+      <Button className="text-white font-bold leading-tight p-2 rounded-md text-center">
         BUILD WITH US
       </Button>
     </div>
