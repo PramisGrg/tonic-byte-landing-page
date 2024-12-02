@@ -12,7 +12,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
 
 const components: {
   title: string;
@@ -66,66 +65,70 @@ const components: {
 
 export default function Navbar() {
   return (
-    <div className="flex justify-between py-4 mx-auto lg:px-24 md:px-16 px-6">
-      <div className="flex gap-4 items-center">
-        {/* <Image
-          height={40}
-          width={40}
-          className="rounded-full"
-          src={tonicByte}
-          alt="Company Logo"
-        /> */}
-        <Link href="/" className="font-bold text-2xl">
-          Tonic <span className="text-primary">Byte</span>
-        </Link>
-      </div>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-base">
-              Services
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[500px] gap-3 p-4 md:w-[600px] md:grid-cols-2 lg:w-[700px] ">
-                {components.map((component) => (
-                  <div className="" key={component.title}>
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  </div>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                <p className="text-base">Careers</p>
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                <p className="text-base">About Us</p>
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-      <Button
-        onClick={() => {
-          console.log("clicked");
-        }}
-        className="text-white bg-primary font-bold leading-tight p-2 rounded-md text-center"
-      >
-        BUILD WITH US
-      </Button>
-    </div>
+    <NavigationMenu className="flex justify-between w-screen py-4 mx-auto lg:px-24 md:px-16 px-6">
+      <NavigationMenuList>
+        <NavigationMenuItem className="flex gap-4 items-center">
+          {/* <Image
+           height={40}
+           width={40}
+           className="rounded-full"
+           src={tonicByte}
+           alt="Company Logo"
+         /> */}
+          <Link href="/" className="font-bold text-2xl">
+            Tonic <span className="text-primary">Byte</span>
+          </Link>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className="text-base">
+            Services
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[500px] gap-3 p-4 md:w-[600px] md:grid-cols-2 lg:w-[700px] ">
+              {components.map((component) => (
+                <div className="" key={component.title}>
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                  >
+                    {component.description}
+                  </ListItem>
+                </div>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <p className="text-base">Careers</p>
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <Link href="/about" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <p className="text-base">About Us</p>
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <Link
+            href={"/contact"}
+            className="text-white bg-primary font-bold leading-tight p-2 rounded-md text-center"
+          >
+            BUILD WITH US
+          </Link>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 }
 
