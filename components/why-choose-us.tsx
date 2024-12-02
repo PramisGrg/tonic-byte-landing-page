@@ -66,22 +66,22 @@ const WhyChooseUs = () => {
         <div className="grid md:grid-cols-2 grid-cols-1">
           <div className="text-xl">
             <ul className="flex justify-center h-full space-y-8 flex-col">
-              {whyChooseUs.map((choose, index) => (
+              {whyChooseUs.map((item, index) => (
                 <motion.li
                   variants={listAnimationVariants}
                   initial="hidden"
                   whileInView="visible"
                   custom={index}
-                  key={choose.tittle}
+                  key={item.tittle}
                   className="flex gap-4"
                 >
                   <p className="border rounded-full p-2 flex items-center justify-center w-10 h-10">
-                    {choose.icon}
+                    {item.icon}
                   </p>
                   <div className="space-y-2">
-                    <p className="text-xl text-primary">{choose.tittle}</p>
+                    <p className="text-xl text-primary">{item.tittle}</p>
                     <p className="text-base text-gray-700">
-                      {choose.description}
+                      {item.description}
                     </p>
                   </div>
                 </motion.li>

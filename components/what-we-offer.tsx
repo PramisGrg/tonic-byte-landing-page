@@ -61,7 +61,7 @@ export const Cell = ({
   );
 };
 
-export const Bento = () => {
+export const OfferSection = () => {
   return (
     <MaxwidthContainer>
       <div className="lg:space-y-20 md:space-y-12 space-y-6 py-14">

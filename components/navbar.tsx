@@ -1,11 +1,8 @@
 "use client";
-
 import * as React from "react";
 import Link from "next/link";
-// import tonicByte from "@/public/tonicbyte.jpeg";
 import { cn } from "@/lib/utils";
 import { CgWebsite } from "react-icons/cg";
-// import { Icons } from "@/components/icons"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,7 +13,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-// import Image from "next/image";
 
 const components: {
   title: string;
@@ -68,7 +64,7 @@ const components: {
   },
 ];
 
-export function NavigationMenuDemo() {
+export default function Navbar() {
   return (
     <div className="flex justify-between py-4 mx-auto lg:px-24 md:px-16 px-6">
       <div className="flex gap-4 items-center">
@@ -121,7 +117,12 @@ export function NavigationMenuDemo() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <Button className="text-white font-bold leading-tight p-2 rounded-md text-center">
+      <Button
+        onClick={() => {
+          console.log("clicked");
+        }}
+        className="text-white bg-primary font-bold leading-tight p-2 rounded-md text-center"
+      >
         BUILD WITH US
       </Button>
     </div>
